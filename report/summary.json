@@ -1,0 +1,227 @@
+{
+  "simulation_only": true,
+  "status": "MEASURED",
+  "runs": 400,
+  "planners": {
+    "RRTConnect": {
+      "attempts": 200,
+      "statuses": {
+        "invalid_goal": 60,
+        "invalid_path": 16,
+        "invalid_start": 20,
+        "success": 104
+      },
+      "planning_returned_success": 120,
+      "dense_valid_plans": 104,
+      "execution_completed": 104,
+      "tracking_pass": 77,
+      "execution_sampled_valid": 74,
+      "all_attempt_planning_s": {
+        "n": 200,
+        "median": 0.001375363,
+        "p95": 0.014083585549999993
+      },
+      "valid_request_planning_s": {
+        "n": 120,
+        "median": 0.004044461,
+        "p95": 0.015356545199999998
+      },
+      "successful_plan_s": {
+        "n": 104,
+        "median": 0.002518192,
+        "p95": 0.013901874099999994
+      },
+      "path_length_rad": {
+        "n": 104,
+        "median": 1.322873098124706,
+        "p95": 6.276090249040659
+      },
+      "tracking_rmse_rad": {
+        "n": 104,
+        "median": 0.052540815660104614,
+        "p95": 0.2665008835597346
+      },
+      "tracking_p95_rad": {
+        "n": 104,
+        "median": 0.11536285804113794,
+        "p95": 0.729014919959866
+      }
+    },
+    "PRM": {
+      "attempts": 200,
+      "statuses": {
+        "invalid_goal": 60,
+        "invalid_path": 15,
+        "invalid_start": 20,
+        "success": 105
+      },
+      "planning_returned_success": 120,
+      "dense_valid_plans": 105,
+      "execution_completed": 105,
+      "tracking_pass": 76,
+      "execution_sampled_valid": 75,
+      "all_attempt_planning_s": {
+        "n": 200,
+        "median": 0.0110830145,
+        "p95": 0.40300009015
+      },
+      "valid_request_planning_s": {
+        "n": 120,
+        "median": 0.102287884,
+        "p95": 0.40399118255
+      },
+      "successful_plan_s": {
+        "n": 105,
+        "median": 0.092547142,
+        "p95": 0.40768843579999997
+      },
+      "path_length_rad": {
+        "n": 105,
+        "median": 1.3228798891949352,
+        "p95": 5.220758434669645
+      },
+      "tracking_rmse_rad": {
+        "n": 105,
+        "median": 0.05027253731943234,
+        "p95": 0.251866241951717
+      },
+      "tracking_p95_rad": {
+        "n": 105,
+        "median": 0.11536283078527076,
+        "p95": 0.729015690192408
+      }
+    }
+  },
+  "per_scene": {
+    "0": {
+      "name": "open_sweep",
+      "RRTConnect": {
+        "valid_plans": 20,
+        "tracking_pass": 20,
+        "execution_sampled_valid": 20
+      },
+      "PRM": {
+        "valid_plans": 20,
+        "tracking_pass": 20,
+        "execution_sampled_valid": 20
+      }
+    },
+    "1": {
+      "name": "open_reverse",
+      "RRTConnect": {
+        "valid_plans": 20,
+        "tracking_pass": 20,
+        "execution_sampled_valid": 20
+      },
+      "PRM": {
+        "valid_plans": 20,
+        "tracking_pass": 20,
+        "execution_sampled_valid": 20
+      }
+    },
+    "2": {
+      "name": "center_column",
+      "RRTConnect": {
+        "valid_plans": 11,
+        "tracking_pass": 9,
+        "execution_sampled_valid": 8
+      },
+      "PRM": {
+        "valid_plans": 10,
+        "tracking_pass": 7,
+        "execution_sampled_valid": 6
+      }
+    },
+    "3": {
+      "name": "low_bar",
+      "RRTConnect": {
+        "valid_plans": 20,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      },
+      "PRM": {
+        "valid_plans": 20,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      }
+    },
+    "4": {
+      "name": "double_pillars",
+      "RRTConnect": {
+        "valid_plans": 0,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      },
+      "PRM": {
+        "valid_plans": 0,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      }
+    },
+    "5": {
+      "name": "narrow_passage",
+      "RRTConnect": {
+        "valid_plans": 13,
+        "tracking_pass": 8,
+        "execution_sampled_valid": 6
+      },
+      "PRM": {
+        "valid_plans": 15,
+        "tracking_pass": 9,
+        "execution_sampled_valid": 9
+      }
+    },
+    "6": {
+      "name": "overhead_shelf",
+      "RRTConnect": {
+        "valid_plans": 20,
+        "tracking_pass": 20,
+        "execution_sampled_valid": 20
+      },
+      "PRM": {
+        "valid_plans": 20,
+        "tracking_pass": 20,
+        "execution_sampled_valid": 20
+      }
+    },
+    "7": {
+      "name": "collision_goal",
+      "RRTConnect": {
+        "valid_plans": 0,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      },
+      "PRM": {
+        "valid_plans": 0,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      }
+    },
+    "8": {
+      "name": "unreachable_joint_goal",
+      "RRTConnect": {
+        "valid_plans": 0,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      },
+      "PRM": {
+        "valid_plans": 0,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      }
+    },
+    "9": {
+      "name": "blocked_start",
+      "RRTConnect": {
+        "valid_plans": 0,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      },
+      "PRM": {
+        "valid_plans": 0,
+        "tracking_pass": 0,
+        "execution_sampled_valid": 0
+      }
+    }
+  }
+}
