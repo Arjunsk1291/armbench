@@ -1,5 +1,6 @@
 """Strict complete-dataset report; execution metrics never mix with planner timing."""
 import csv
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -49,5 +50,11 @@ def main():
   groups=[[r[key] for r in rows if r['planner']==p and (r['start_valid'] and r['goal_valid'] if key=='planning_wall_s' else r['execution_completed'])] for p in ['RRTConnect','PRM']]
   ax.boxplot(groups,tick_labels=['RRTConnect','PRM'],showfliers=True);ax.set_ylabel(label)
  fig.suptitle('Simulation: planning and execution measured separately');fig.tight_layout();fig.savefig(out/'timing_tracking.png',dpi=160);plt.close(fig)
+ fig,ax=plt.subplots(figsize=(10,5));x=np.arange(10)
+ for off,p,col in [(-.18,'RRTConnect','#167d95'),(.18,'PRM','#b46d21')]:
+  ax.bar(x+off,[summary['per_scene'][str(i)][p]['execution_sampled_valid'] for i in range(10)],.36,label=p,color=col)
+ ax.set_xticks(x,[summary['per_scene'][str(i)]['name'] for i in range(10)],rotation=35,ha='right');ax.set_ylim(0,20);ax.set_ylabel('Sampled-valid executions / 20 attempts');ax.set_title('Simulation execution: dense-valid planning does not guarantee safety');ax.legend();fig.tight_layout();fig.savefig(out/'execution_valid.png',dpi=160);plt.close(fig)
+ files=sorted(p for p in out.iterdir() if p.is_file() and p.name!='SHA256SUMS')
+ (out/'SHA256SUMS').write_text(''.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}\n' for p in files))
  print(json.dumps(summary['planners'],indent=2))
 if __name__=='__main__':main()

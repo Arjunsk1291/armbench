@@ -1,0 +1,14 @@
+test_complete_evaluation (test_integrity.Integrity) ... ok
+test_duplicate_rejected (test_integrity.Integrity) ... ok
+test_failure_cases_preserved (test_integrity.Integrity) ... ok
+test_finite_and_recomputed_traces (test_integrity.Integrity) ... ok
+test_frozen_eval_inputs_match (test_integrity.Integrity) ... ok
+test_missing_rejected (test_integrity.Integrity) ... ok
+test_model_geometry_matches (test_integrity.Integrity) ... ok
+test_positive_control (test_integrity.Integrity) ... ok
+test_seed_split (test_integrity.Integrity) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.436s
+
+OK

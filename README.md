@@ -45,6 +45,8 @@ Counts use all 200 attempts per planner. Timing uses the 120 valid requests per 
 
 ![Planning and execution distributions](report/timing_tracking.png)
 
+![Execution failures with the same denominator](report/execution_valid.png)
+
 [Complete raw CSV](report/raw.csv), [JSONL](report/raw.jsonl), [summary and per-scene breakdown](report/summary.json), [frozen inputs](results/evaluation/manifest.json), [hardware](results/evaluation/hardware.json), [protocol](config/PREREGISTRATION.md).
 
 ## Negative findings and positive controls
