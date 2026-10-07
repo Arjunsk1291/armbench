@@ -1,0 +1,23 @@
+{
+  "id": 0,
+  "name": "open_sweep",
+  "start": [
+    0,
+    -0.8,
+    1.2,
+    0,
+    -0.4,
+    0
+  ],
+  "goal": [
+    1.0,
+    -0.5,
+    0.8,
+    0.2,
+    -0.3,
+    0.1
+  ],
+  "obstacles": [],
+  "budget_s": 1.0,
+  "simulation_only": true
+}

@@ -40,4 +40,6 @@ def generate(root):
     for f,lines in [('arm.urdf',urdf),('arm.sdf',sdf),('arm.srdf',srdf)]:
         text='\n'.join(lines)+'\n';ET.fromstring(text);(root/f).write_text(text)
     (root/'geometry.json').write_text(json.dumps({'lengths_m':LENGTHS,'width_m':WIDTH,'axes':AXES,'limits_rad':LIMITS,'simulation_only':True,'origin':'original procedural geometry, no external assets'},indent=2)+'\n')
-if __name__=='__main__':generate('models')
+if __name__=='__main__':
+    generate('models')
+    w=ET.parse('models/world.sdf');w.getroot().find('world').append(ET.parse('models/arm.sdf').getroot().find('model'));w.write('models/world_with_arm.sdf')
