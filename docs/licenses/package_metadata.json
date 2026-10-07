@@ -1,0 +1,81 @@
+[
+  {
+    "package": "moveit_core",
+    "version": "2.5.9",
+    "licenses": [
+      "BSD"
+    ],
+    "urls": [
+      "http://moveit.ros.org",
+      "https://github.com/ros-planning/moveit2/issues",
+      "https://github.com/ros-planning/moveit2"
+    ]
+  },
+  {
+    "package": "moveit_planners_ompl",
+    "version": "2.5.9",
+    "licenses": [
+      "BSD"
+    ],
+    "urls": [
+      "http://moveit.ros.org",
+      "https://github.com/ros-planning/moveit2/issues",
+      "https://github.com/ros-planning/moveit2"
+    ]
+  },
+  {
+    "package": "rclcpp",
+    "version": "16.0.19",
+    "licenses": [
+      "Apache License 2.0"
+    ],
+    "urls": []
+  },
+  {
+    "package": "gazebo_ros",
+    "version": "3.9.0",
+    "licenses": [
+      "Apache 2.0"
+    ],
+    "urls": [
+      "http://classic.gazebosim.org/tutorials?cat=connect_ros",
+      "https://github.com/ros-simulation/gazebo_ros_pkgs/issues",
+      "https://github.com/ros-simulation/gazebo_ros_pkgs"
+    ]
+  },
+  {
+    "package": "srdfdom",
+    "version": "2.0.7",
+    "licenses": [
+      "BSD"
+    ],
+    "urls": [
+      "http://ros.org/wiki/srdfdom",
+      "https://github.com/ros-planning/srdfdom/issues",
+      "https://github.com/ros-planning/srdfdom"
+    ]
+  },
+  {
+    "package": "urdf",
+    "version": "2.6.1",
+    "licenses": [
+      "BSD"
+    ],
+    "urls": [
+      "https://github.com/ros2/urdf",
+      "https://github.com/ros2/urdf/issues"
+    ]
+  },
+  {
+    "package": "pluginlib",
+    "version": "5.1.4",
+    "licenses": [
+      "BSD"
+    ],
+    "urls": [
+      "http://www.ros.org/wiki/pluginlib",
+      "https://github.com/ros/pluginlib/issues",
+      "https://github.com/ros/pluginlib"
+    ]
+  }
+]

@@ -14,17 +14,15 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: mamba-org/setup-micromamba@v2
-        with:
-          environment-file: conda-linux-64.lock
-          environment-name: arm
-          cache-environment: true
+      - name: Install exact RoboStack environment
+        run: |
+          curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
+          ./bin/micromamba create -r "$HOME/mamba" -n arm -f conda-linux-64.lock -y
       - uses: actions/setup-python@v5
         with: {python-version: '3.10'}
       - run: pip install -r report-requirements.lock
-      - shell: micromamba-shell {0}
-        run: |
-          cmake -S . -B build
-          cmake --build build -j2
-          GAZEBO_MODEL_DATABASE_URI='' ./build/armbench 0 RRTConnect 1099 results/integration
+      - run: |
+          ./bin/micromamba run -r "$HOME/mamba" -n arm cmake -S . -B build
+          ./bin/micromamba run -r "$HOME/mamba" -n arm cmake --build build -j2
+          ./bin/micromamba run -r "$HOME/mamba" -n arm env GAZEBO_MODEL_DATABASE_URI='' ./build/armbench 0 RRTConnect 1099 results/integration
           python -c "import json; x=json.load(open('results/integration/00_RRTConnect_1099.json')); assert x['collision_valid'] and x['tracking_pass'] and x['execution_collision_valid']"
