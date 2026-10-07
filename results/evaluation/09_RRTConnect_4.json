@@ -1,0 +1,18 @@
+{
+	"budget_s" : 1.0,
+	"collision_valid" : false,
+	"execution_completed" : false,
+	"goal_valid" : false,
+	"planner" : "RRTConnect",
+	"planner_reported_s" : 0.0,
+	"planning_success" : false,
+	"planning_wall_s" : 0.0,
+	"process_wall_s" : 0.041286001000000003,
+	"scene" : 9,
+	"scene_name" : "blocked_start",
+	"seed" : 4,
+	"simulation_only" : true,
+	"start_valid" : false,
+	"status" : "invalid_start",
+	"status_label" : "MEASURED"
+}

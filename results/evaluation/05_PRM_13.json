@@ -1,0 +1,22 @@
+{
+	"budget_s" : 1.0,
+	"collision_checked_states" : 372,
+	"collision_valid" : false,
+	"execution_completed" : false,
+	"goal_valid" : true,
+	"moveit_code" : 1,
+	"path_length_rad" : 3.7737467757225871,
+	"planner" : "PRM",
+	"planner_reported_s" : 0.12526573400000002,
+	"planning_success" : true,
+	"planning_wall_s" : 0.12542925599999999,
+	"process_wall_s" : 0.174945404,
+	"scene" : 5,
+	"scene_name" : "narrow_passage",
+	"seed" : 13,
+	"simulation_only" : true,
+	"start_valid" : true,
+	"status" : "invalid_path",
+	"status_label" : "MEASURED",
+	"waypoints" : 56
+}

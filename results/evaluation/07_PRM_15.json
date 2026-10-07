@@ -1,0 +1,18 @@
+{
+	"budget_s" : 1.0,
+	"collision_valid" : false,
+	"execution_completed" : false,
+	"goal_valid" : false,
+	"planner" : "PRM",
+	"planner_reported_s" : 0.0,
+	"planning_success" : false,
+	"planning_wall_s" : 0.0,
+	"process_wall_s" : 0.040221839000000002,
+	"scene" : 7,
+	"scene_name" : "collision_goal",
+	"seed" : 15,
+	"simulation_only" : true,
+	"start_valid" : true,
+	"status" : "invalid_goal",
+	"status_label" : "MEASURED"
+}

@@ -1,0 +1,20 @@
+[INFO] [1791369761.683405411] [moveit_robot_model.robot_model]: Loading robot model 'evidence_arm'...
+[INFO] [1791369761.683483294] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+{
+	"budget_s" : 1.0,
+	"collision_valid" : false,
+	"execution_completed" : false,
+	"goal_valid" : false,
+	"planner" : "RRTConnect",
+	"planner_reported_s" : 0.0,
+	"planning_success" : false,
+	"planning_wall_s" : 0.0,
+	"process_wall_s" : 0.044770349000000001,
+	"scene" : 4,
+	"scene_name" : "double_pillars",
+	"seed" : 2,
+	"simulation_only" : true,
+	"start_valid" : true,
+	"status" : "invalid_goal",
+	"status_label" : "MEASURED"
+}

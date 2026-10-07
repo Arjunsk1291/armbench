@@ -1,0 +1,26 @@
+[INFO] [1791369639.891894277] [moveit_robot_model.robot_model]: Loading robot model 'evidence_arm'...
+[INFO] [1791369639.891949997] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[WARN] [1791369639.898664488] [moveit.ompl_planning.model_based_planning_context]: It looks like the planning volume was not specified.
+[INFO] [1791369639.898923560] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm[PRM]' will use planner 'geometric::PRM'. Additional configuration parameters will be set when the planner is constructed.
+{
+	"budget_s" : 1.0,
+	"collision_checked_states" : 293,
+	"collision_valid" : false,
+	"execution_completed" : false,
+	"goal_valid" : true,
+	"moveit_code" : 1,
+	"path_length_rad" : 3.188943749711826,
+	"planner" : "PRM",
+	"planner_reported_s" : 0.30675382500000004,
+	"planning_success" : true,
+	"planning_wall_s" : 0.30692075299999999,
+	"process_wall_s" : 0.35385858599999997,
+	"scene" : 2,
+	"scene_name" : "center_column",
+	"seed" : 4,
+	"simulation_only" : true,
+	"start_valid" : true,
+	"status" : "invalid_path",
+	"status_label" : "MEASURED",
+	"waypoints" : 47
+}
