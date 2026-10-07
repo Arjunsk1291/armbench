@@ -25,7 +25,6 @@ int main(int argc,char**argv){
  int sceneidx=std::stoi(argv[1]),seed=std::stoi(argv[3]);std::string algorithm=argv[2],outdir=argv[4];
  if(algorithm!="RRTConnect"&&algorithm!="PRM")return 2;
  char num[8];snprintf(num,sizeof(num),"%02d",sceneidx);std::string prefix="config/scenes/"+std::string(num);
- if(sceneidx==10)prefix="config/controls/positive_short";
  Json::Value cfg;std::ifstream cf(prefix+".json");cf>>cfg;
  auto qstart=vec(cfg["start"]),qgoal=vec(cfg["goal"]);
  if(qstart.size()!=6||qgoal.size()!=6)throw std::runtime_error("scene missing");

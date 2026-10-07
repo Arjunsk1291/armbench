@@ -1,0 +1,14 @@
+{
+  "simulation_only": true,
+  "source": "actual stored Gazebo joint-state traces, forward-kinematics visualization",
+  "scenes": [
+    0,
+    3
+  ],
+  "seed": 0,
+  "planners": [
+    "RRTConnect",
+    "PRM"
+  ],
+  "not_live_renderer": true
+}
