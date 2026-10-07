@@ -17,7 +17,7 @@ jobs:
       - name: Install exact RoboStack environment
         run: |
           curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
-          ./bin/micromamba create -r "$HOME/mamba" -n arm -f conda-linux-64.lock -y
+          ./bin/micromamba create -r "$HOME/mamba" -n arm -f conda-linux-64.explicit -y
       - uses: actions/setup-python@v5
         with: {python-version: '3.10'}
       - run: pip install -r report-requirements.lock

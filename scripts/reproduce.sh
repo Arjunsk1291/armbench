@@ -10,7 +10,7 @@ if ! command -v "$MAMBA" >/dev/null; then
  MAMBA="$PWD/.local/bin/micromamba"
 fi
 if ! "$MAMBA" run -n arm python -c 'import rclpy' >/dev/null 2>&1; then
- "$MAMBA" create -n arm -f conda-linux-64.lock -y
+ "$MAMBA" create -n arm -f conda-linux-64.explicit -y
 fi
 "$MAMBA" run -n arm cmake -S . -B build
 "$MAMBA" run -n arm cmake --build build -j1

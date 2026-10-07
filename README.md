@@ -65,7 +65,7 @@ Counts use all 200 attempts per planner. Timing uses the 120 valid requests per 
 bash scripts/reproduce.sh
 ```
 
-Ubuntu/Linux x86_64, Python 3.10 for plotting, several GB disk space. The script installs the exact conda distribution in `conda-linux-64.lock`, compiles serially, resumes the 400-run suite, audits/traces/tests, regenerates plots/demo and performs a fresh actual-stack integration run. Runtime is CPU-only; no GPU needed.
+Ubuntu/Linux x86_64, Python 3.10 for plotting, several GB disk space. The script installs the exact conda distribution in `conda-linux-64.explicit` (normalized from the original measured export `conda-linux-64.lock`), compiles serially, resumes the 400-run suite, audits/traces/tests, regenerates plots/demo and performs a fresh actual-stack integration run. Runtime is CPU-only; no GPU needed.
 
 Saved result keys resume instead of rerunning. For an independent full rerun, move `results/evaluation` aside first. Frozen-input changes refuse mixed results. The lock uses prebuilt RoboStack ROS2/MoveIt/Gazebo binaries; clean installation and local execution were verified, while final CI status is checked separately.
 
