@@ -16,6 +16,7 @@
 #include <iterator>
 #include <filesystem>
 #include <cmath>
+#include <sstream>
 std::string read(const std::string& p){std::ifstream f(p);return std::string(std::istreambuf_iterator<char>(f),{});}
 std::vector<double> vec(const Json::Value& a){std::vector<double>x;for(auto&v:a)x.push_back(v.asDouble());return x;}
 Json::Value arr(const std::vector<double>& a){Json::Value x(Json::arrayValue);for(auto v:a)x.append(v);return x;}
@@ -69,6 +70,11 @@ int main(int argc,char**argv){
    else {
     auto et=std::chrono::steady_clock::now();auto ex=execute_gazebo(prefix+".world.sdf",path,stem+".trace.csv");
     result["execution_wall_s"]=std::chrono::duration<double>(std::chrono::steady_clock::now()-et).count();result["execution_completed"]=ex.completed;result["tracking_rmse_rad"]=ex.rmse;result["tracking_p95_rad"]=ex.p95;result["tracking_max_rad"]=ex.max_error;result["execution_sim_s"]=ex.sim_s;result["tracking_samples"]=ex.samples;result["execution_error"]=ex.error;
+    result["tracking_pass"]=ex.completed&&ex.rmse<=.15;
+    std::ifstream trace(stem+".trace.csv");std::string line;std::getline(trace,line);std::vector<double> actual(6);int actual_bad=0,actual_checked=0;
+    while(std::getline(trace,line)){std::stringstream ls(line);std::string cell;std::vector<std::string> cols;while(std::getline(ls,cell,','))cols.push_back(cell);if(cols.size()!=7)continue;int j=std::stoi(cols[1]);actual[j]=std::stod(cols[3]);if(j==5){moveit::core::RobotState st(model);st.setJointGroupPositions(group,actual);st.update();actual_checked++;if(!st.satisfiesBounds(group)||scene->isStateColliding(st,"arm"))actual_bad++;}}
+    result["actual_state_checked_samples"]=actual_checked;result["actual_invalid_samples"]=actual_bad;result["execution_collision_valid"]=ex.completed&&actual_bad==0;
+
    }
   }
  }

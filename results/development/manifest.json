@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "simulation_only": true,
+  "inputs": {
+    "conda-linux-64.lock": "04194e794576b6eb41f648ab735a57a20a170de225b8b7104414b5858a830334",
+    "config/PREREGISTRATION.md": "493556b3b1d394bd0834e7f2dece563a7802b14257bbb724a782263d8e5988f1",
+    "config/scenes/00.json": "8ae427c1c2e0b142f9a555e71cdbf0f482b1f7b9b25f10024f0a28b09c154054",
+    "config/scenes/00.world.sdf": "7537d41bf4de45ef6153323dfb012bd998f2e28ef8a7564087dcf7a7b81ece3d",
+    "config/scenes/01.json": "3c84206bdf488aea92efd3884ad3735b1079fa4028d1fd643c17dbeaf0fa91ae",
+    "config/scenes/01.world.sdf": "7537d41bf4de45ef6153323dfb012bd998f2e28ef8a7564087dcf7a7b81ece3d",
+    "config/scenes/02.json": "81bd3ec3515b8c6096889c2e1232f574308884a80a415dd6a9c19a776aa3c359",
+    "config/scenes/02.world.sdf": "83dd647326d7bd4a48c9ab1dfb1776ee7bee6e66badbe2a75eb3aa8673ba2171",
+    "config/scenes/03.json": "175dc1e3a95d42eadf2e8a0626e8c0e0f4dfd4b7c5bb4dd6493970f2443c945b",
+    "config/scenes/03.world.sdf": "48c9726db272482c4f1bdae36807cbf35e9c23e407299fdceba14d59d2ee6a5d",
+    "config/scenes/04.json": "eb91048444e73d0059d0b19e74afe5590349486fdae3e1e6172615a82ffde45f",
+    "config/scenes/04.world.sdf": "33005d3f5138a7a226e5d11fe9d101aa85745b8e8a8998f09228051da40754f0",
+    "config/scenes/05.json": "3eb9bc28cd34078a07678b6359143a7d8fee67bce51ece4705c84c8faf423e37",
+    "config/scenes/05.world.sdf": "cccc6ea67b83e8e6bb44544e0ebdddf16198dc450d706bf435aca190e013746b",
+    "config/scenes/06.json": "4e81c823152a1f1fc06c8cb0158144794eb9922db6c03eb52b8f33350abb7901",
+    "config/scenes/06.world.sdf": "82ad84ca4a6d8cea9ee73bcf7a120dadc26b6c6941be14a1bd05ecfe91380933",
+    "config/scenes/07.json": "a0d737228d91182b48894d8b8003179e51c512e363018c6dff152cc76f6b4229",
+    "config/scenes/07.world.sdf": "1b2d9af26b8542c1fd15dc8a5107a6a589cf692b39292a18321e3aa4c0d6883c",
+    "config/scenes/08.json": "1b603d7f969299af81718383a49c095b2227bd732f6df19451bf603351935267",
+    "config/scenes/08.world.sdf": "7537d41bf4de45ef6153323dfb012bd998f2e28ef8a7564087dcf7a7b81ece3d",
+    "config/scenes/09.json": "c09833aef38add7890d6b7c1943fd42c1e90ad072f5a1f9deb84788b05440dc7",
+    "config/scenes/09.world.sdf": "497d74922b553b8cd036368cbedcf94abb265f40d1e7998b9f3b6165dbcd4401",
+    "models/arm.sdf": "c3a6ff99b35f6589b3d2e62f1e210e62c7b32c35377b0d42d81b32be48bb2578",
+    "models/arm.srdf": "373794f1ed50c7b765151b781c9782357a5c01f998f28fbf3cc9b03a9061288a",
+    "models/arm.urdf": "1155a1c0e6fa3dea1f1e223672d89deb4272d6f162cc59e5492b944fabf083cb",
+    "models/geometry.json": "6cbfe0612430a057a6913253a63e68cd8d57622a822c6c72b7ec71d3f56363fc",
+    "models/world.sdf": "dce8706c0f5cad718cd741b2d7795039fe910e9e349a358c0ccdb36c0e785582",
+    "models/world_with_arm.sdf": "7537d41bf4de45ef6153323dfb012bd998f2e28ef8a7564087dcf7a7b81ece3d",
+    "src/benchmark.cpp": "933f60e5b4ed08734b037e36a45de30c64f40933a91d5a9fa30cb5e200043332",
+    "src/execution.hpp": "5f0111490d5f927808048c39f461daf2a58417c4e05c8b56ef9297145e4b2aea",
+    "src/gazebo_smoke.cpp": "570812cd267c40caf45276bc634fd3b58d80bf82b600642206e943dda2ea7c64"
+  },
+  "seeds": [
+    1000,
+    1001
+  ],
+  "planners": [
+    "RRTConnect",
+    "PRM"
+  ],
+  "scene_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "budget_s": 1.0,
+  "tracking": "torque-limited PD, original synthetic inertias (minimum .005 kg m2), max .5 rad/s command"
+}

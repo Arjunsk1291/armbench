@@ -17,13 +17,13 @@ ExecutionResult execute_gazebo(const std::string& worldfile,const std::vector<st
  std::vector<double> errors;
  double time=0;int step=0;double sumsq=0;
  const double dt=.001,torque_limit=30.;
- const double kp[6]={30,30,20,3,2,1},kd[6]={2,2,1,.04,.03,.01};
+ const double kp[6]={40,40,30,10,8,5},kd[6]={3,3,2,.6,.5,.3};
  auto hold=[&](const std::vector<double>& desired){
   for(int j=0;j<6;j++){
    double actual=joints[j]->Position(0),vel=joints[j]->GetVelocity(0),err=desired[j]-actual;
    double tau=std::clamp(kp[j]*err-kd[j]*vel,-torque_limit,torque_limit);joints[j]->SetForce(0,tau);
    if(step%10==0){tr<<time<<','<<j<<','<<desired[j]<<','<<actual<<','<<vel<<','<<tau<<','<<err<<'\n';errors.push_back(std::abs(err));sumsq+=err*err;}
-   if(!std::isfinite(actual)||std::abs(actual)>10)throw std::runtime_error("dynamics divergence");
+   if(!std::isfinite(actual)||!std::isfinite(vel)||!std::isfinite(tau)||std::abs(actual)>10||std::abs(vel)>100)throw std::runtime_error("dynamics divergence");
   }
   world->Step(1);step++;time+=dt;
  };

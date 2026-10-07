@@ -22,15 +22,15 @@ def generate(root):
         link=f'link{i+1}';joint=f'joint{i+1}'
         offset='0 0 .08' if i==0 else f'{LENGTHS[i-1]} 0 0'
         mass=.35 if i<3 else .15
-        iy=mass*(length**2+WIDTH**2)/12;ix=mass*(2*WIDTH**2)/12
+        iy=max(.005,mass*(length**2+WIDTH**2)/12);ix=max(.005,mass*(2*WIDTH**2)/12)
         urdf += [f'<link name="{link}"><inertial><origin xyz="{length/2} 0 0"/><mass value="{mass}"/><inertia ixx="{ix}" iyy="{iy}" izz="{iy}" ixy="0" ixz="0" iyz="0"/></inertial>',
                  f'<visual><origin xyz="{length/2} 0 0"/><geometry><box size="{length} {WIDTH} {WIDTH}"/></geometry><material name="teal"><color rgba=".12 .6 .65 1"/></material></visual>',
                  f'<collision><origin xyz="{length/2} 0 0"/><geometry><box size="{length} {WIDTH} {WIDTH}"/></geometry></collision></link>',
-                 f'<joint name="{joint}" type="revolute"><parent link="{parent}"/><child link="{link}"/><origin xyz="{offset}"/><axis xyz="{axis}"/><limit lower="{limits[0]}" upper="{limits[1]}" effort="30" velocity="1.5"/><dynamics damping=".2" friction="0"/></joint>']
+                 f'<joint name="{joint}" type="revolute"><parent link="{parent}"/><child link="{link}"/><origin xyz="{offset}"/><axis xyz="{axis}"/><limit lower="{limits[0]}" upper="{limits[1]}" effort="30" velocity="1.5"/><dynamics damping=".005" friction="0"/></joint>']
         sdf += [f'<link name="{link}"><pose>{cumulative+length/2} 0 .13 0 0 0</pose><inertial><mass>{mass}</mass><inertia><ixx>{ix}</ixx><iyy>{iy}</iyy><izz>{iy}</izz></inertia></inertial>',
                 f'<collision name="collision"><geometry><box><size>{length} {WIDTH} {WIDTH}</size></box></geometry></collision>',
                 f'<visual name="visual"><geometry><box><size>{length} {WIDTH} {WIDTH}</size></box></geometry><material><ambient>.12 .6 .65 1</ambient></material></visual></link>',
-                f'<joint name="{joint}" type="revolute"><parent>{parent}</parent><child>{link}</child><pose> {-length/2} 0 0 0 0 0</pose><axis><xyz>{axis}</xyz><use_parent_model_frame>true</use_parent_model_frame><limit><lower>{limits[0]}</lower><upper>{limits[1]}</upper><effort>30</effort><velocity>1.5</velocity></limit><dynamics><damping>.2</damping></dynamics></axis></joint>']
+                f'<joint name="{joint}" type="revolute"><parent>{parent}</parent><child>{link}</child><pose> {-length/2} 0 0 0 0 0</pose><axis><xyz>{axis}</xyz><use_parent_model_frame>true</use_parent_model_frame><limit><lower>{limits[0]}</lower><upper>{limits[1]}</upper><effort>30</effort><velocity>1.5</velocity></limit><dynamics><damping>.005</damping></dynamics></axis></joint>']
         cumulative+=length
     urdf+=['</robot>'];sdf+=['</model></sdf>']
     srdf=['<robot name="evidence_arm"><group name="arm"><chain base_link="base" tip_link="link6"/></group>']
